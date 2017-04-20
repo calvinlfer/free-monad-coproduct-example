@@ -2,17 +2,15 @@ name := "free-monad-coproduct-example"
 
 version := "1.0"
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.12.2"
 
-lazy val `free-monad-coproduct-example` =
-  (project in file("."))
-    .settings(Seq(addCompilerPlugin("com.milessabin" % "si2712fix-plugin_2.11.8" % "1.2.0")))
+scalacOptions := Seq("-Ypartial-unification")
 
-resolvers += Resolver.jcenterRepo
+resolvers += Resolver.bintrayRepo("projectseptemberinc", "maven")
 
 libraryDependencies ++= {
   Seq(
-    "org.typelevel"             %% "cats"     % "0.8.1",
-    "com.projectseptember"      %% "freek"    % "0.6.5"
+    "org.typelevel"             %% "cats"     % "0.9.0",
+    "com.projectseptember"      %% "freek"    % "0.6.7"
   )
 }
